@@ -22,6 +22,11 @@ def making_change(amount, denominations):
     return making_change(amount - denominations[-1], denominations) + making_change(amount, denominations[:-1])
 
 making_change(10, [1, 2, 5])
+
+# becomes: m_c(10 - 5, [1, 2, 5]) + m_c(10, [1, 2])
+m_c(o, [1, 2, 5]) + m_c(10, [1, 2]) + m_c(8, [1, 2]) + m_c(10, [1])
+## -> m_c(5 - 5, [1, 2, 5]) + m_c(5, [1])
+### -> first one returns 1 (b/c less than zero)
   
 
 
