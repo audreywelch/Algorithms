@@ -7,6 +7,7 @@ def recipe_batches(recipe, ingredients):
   # Property to hold the number of batches that can be made
   batches = float("inf")
 
+  # O(n)
   # Loop through each key in recipe
   for key in recipe.keys():
 

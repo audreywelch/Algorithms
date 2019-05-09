@@ -3,6 +3,7 @@ import argparse
 
 prices = [100, 90, 80, 50, 20, 10]
 prices2 = [1050, 270, 1540, 3800, 2]
+close_prices = [6032, 6090, 6049, 6060, 6075, 5948, 5872]
 
 # O(n^2)
 def find_max_profit(prices):
@@ -25,14 +26,15 @@ def find_max_profit(prices):
 
 print(find_max_profit(prices))
 print(find_max_profit(prices2))
+print(find_max_profit(close_prices))
 
-if __name__ == '__main__':
-  # This is just some code to accept inputs from the command line
-  parser = argparse.ArgumentParser(description='Find max profit from prices.')
-  parser.add_argument('integers', metavar='N', type=int, nargs='+', help='an integer price')
-  args = parser.parse_args()
+# if __name__ == '__main__':
+#   # This is just some code to accept inputs from the command line
+#   parser = argparse.ArgumentParser(description='Find max profit from prices.')
+#   parser.add_argument('integers', metavar='N', type=int, nargs='+', help='an integer price')
+#   args = parser.parse_args()
 
-  print("A profit of ${profit} can be made from the stock prices {prices}.".format(profit=find_max_profit(args.integers), prices=args.integers))
+#   print("A profit of ${profit} can be made from the stock prices {prices}.".format(profit=find_max_profit(args.integers), prices=args.integers))
 
 ## Nested loops are not as performant
 # How can we cut out one of these loops?
@@ -72,3 +74,4 @@ def find_max_profit_linear(prices):
 
 print(find_max_profit_linear(prices))
 print(find_max_profit_linear(prices2))
+print(find_max_profit_linear(close_prices))
